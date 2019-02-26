@@ -19,7 +19,7 @@ sudo apt-get install shadowsocks-libev
 
 read -p "Input your server ip: " server
 read -p "Input your server port: " server_port
-read -p "Input your passwd: " passwd
+read -s -p "Input your passwd: " passwd
 
 echo
 echo "Method: "
