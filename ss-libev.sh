@@ -15,6 +15,9 @@ echo -e "\033[33mBegin to install shadowsocks-libev...\033[0m"
 echo -e "\033[33mPlease excute this by root user!\033[0m"
 echo -e "\033[33mElse it will be faild!\033[0m"
 echo
+
+sudo apt-get update
+sudo apt-get upgrade
 sudo apt-get install shadowsocks-libev
 
 read -p "Input your server ip: " server
