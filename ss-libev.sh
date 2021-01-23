@@ -20,7 +20,6 @@ sudo apt-get update
 sudo apt-get upgrade
 sudo apt-get install shadowsocks-libev
 
-read -p "Input your server ip: " server
 read -p "Input your server port: " server_port
 read -s -p "Input your passwd: " passwd
 
@@ -43,7 +42,7 @@ echo -e "\033[33mYour method is $method, now write it to config.json...\033[0m"
 
 cd /etc/shadowsocks-libev/
 echo "{" > config.json
-echo "    \"server\":\"$server\"," >> config.json
+echo "    \"server\":[\"::0\", \"0.0.0.0\"]," >> config.json
 echo "    \"server_port\":$server_port," >> config.json
 echo "    \"local_port\":1080," >> config.json
 echo "    \"password\":\"$passwd\"," >> config.json
