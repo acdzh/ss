@@ -4,7 +4,7 @@ export PATH
 
 #
 # Auto install Shadowsocks Server
-# Copyright (C) 2016-2019 
+# Copyright (C) 2016-2021
 # System Required:  CentOS 6+, Debian7+, Ubuntu12+
 # Reference URL:
 # https://github.com/shadowsocks/shadowsocks
@@ -16,9 +16,9 @@ echo -e "\033[33mPlease excute this by root user!\033[0m"
 echo -e "\033[33mElse it will be faild!\033[0m"
 echo
 
-sudo apt-get update
-sudo apt-get upgrade
-sudo apt-get install shadowsocks-libev
+sudo apt update
+sudo apt upgrade -y
+sudo apt install shadowsocks-libev
 
 read -p "Input your server port: " server_port
 read -s -p "Input your passwd: " passwd
@@ -55,7 +55,7 @@ case $if_simple_obfs in
     N) if_simple_obfs="n";;
 esac
 case $if_simple_obfs in
-    y) sudo apt-get install --no-install-recommends build-essential git autoconf libtool libssl-dev libpcre3-dev libev-dev asciidoc xmlto automake
+    y) sudo apt install --no-install-recommends -y build-essential git autoconf libtool libssl-dev libpcre3-dev libev-dev asciidoc xmlto automake
        cd /opt
        git clone https://github.com/shadowsocks/simple-obfs.git
        cd simple-obfs
